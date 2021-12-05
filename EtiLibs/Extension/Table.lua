@@ -76,12 +76,8 @@ end
 -- ONLY SUPPORTS ORDINAL TABLES (ARRAYS). Merges all the given tables together.
 function Table.joinArray<T>(...: {T}): {T}
 	local tbls = {...}
-	local size = 0
 	local at = 1
-	for i = 1, #tbls do
-		size += #tbls[i]
-	end
-	local newTbl = table.create(size)
+	local newTbl = {}
 	for i = 1, #tbls do
 		local tbl = tbls[i]
 		table.move(tbl, 1, #tbl, at, newTbl)
