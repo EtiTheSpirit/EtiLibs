@@ -24,7 +24,8 @@ type Func<TIn, TReturn> = (TIn) -> (TReturn)
 
 -- Returns true if the table contains the specified value.
 function Table.containsElement(tbl: AnyTable, value: any): boolean
-	return Table.indexOf(tbl, value) ~= nil -- This is kind of cheatsy but it promises the best performance.
+	return Table.indexOf(tbl, value) ~= nil -- This is kind of cheatsy but it promises the best performance out of the little gizmos the module offers
+	-- (so it's not *the best performance*, but of what is available here, it will try to work quickly). You should try to use table.find if you know it's an array.
 end
 
 -- Returns the key of the specified value, or nil if it could not be found. Unlike IndexOf, this searches every key in the table, not just ordinal indices (arrays)
