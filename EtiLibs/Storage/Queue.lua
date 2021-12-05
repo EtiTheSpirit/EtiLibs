@@ -20,7 +20,7 @@ function Queue:Dequeue<T>(): T?
 	
 	table.remove(self.Data, 1) -- TODO: Better solution for this? Large queues will have a hard time with this operation.
   -- TODO: Idea: Keep a general "offset" value on hand, use the offset instead of [1], then once the offset reaches a value like say, x, or y% of the queue's size,
-  -- a single, bulk table.move call shifts everything back by 1 so the list doesn't infinitely expand, and so that it lets me dispose of dequeued entries behind the offset.
+  -- a single, bulk table.move call shifts everything back to 1 so the list doesn't infinitely expand, and so that it lets me dispose of dequeued entries behind the offset.
 	return item
 end
 
