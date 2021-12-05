@@ -8,7 +8,7 @@ Stack.__index = Stack
 local DEFAULT_SIZE = 256
 
 function Stack:Push<T>(item: T)
-	if #self.Data >= DEFAULT_SIZE then
+	if #self.Data >= self.AllocationSpace then
 		-- use GE because of multithreaded access in the future (idk if it'll be a problem, but ConcurrentStack<T> should resolve that anyway.)
 		error("Stack overflow.")
 	end
